@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--默认的socpe是单例模式即singleton 这样会在创建容器的时候创建bean实例，每次返回的是用一个bean-->
+    <!--prototype原型模式，再创建容器的时候并不创建bean实例，再获取bean的时候才创建bean，每次返回的是不同的bean-->
+    <bean id="car" class="lesson05.Car" p:wheel="4" p:price="2000" scope="prototype"></bean>
+
+</beans>
