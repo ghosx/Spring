@@ -10,5 +10,7 @@ public class Main {
         System.out.println(address);
         Address address1 = (Address) applicationContext.getBean("address1");
         System.out.println(address1);
+        Person person = (Person) applicationContext.getBean("person");
+        System.out.println(person);
     }
 }

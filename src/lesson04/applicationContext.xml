@@ -2,13 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--抽象bean不能被实例化 abstrac  如果一个bean的class没有指定，则必须为抽象bean-->
     <bean id="address" class="lesson04.Address">
         <property name="street" value="陕西安康"></property>
     </bean>
     <bean id="address1" class="lesson04.Address" parent="address" p:street="hahah">
     </bean>
-
     <bean id="car" class="lesson04.Car" p:wheel="4" p:price="2000"></bean>
+    <!--depends-on 要求必须又一个car的bean，否则会编译出错，如果没有depends-on则编译不会出错，car=null-->
+    <bean id="person" class="lesson04.Person" p:name="张伟" p:address-ref="address" p:car-ref="car"
+          depends-on="car"></bean>
 
-    <bean id="person" class="lesson04.Person" p:name="张伟" p:address-ref="address" p:car-ref="car"></bean>
 </beans>
