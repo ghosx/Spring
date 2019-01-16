@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car1" class="lesson03.Car">
+        <!--使用类型和位置定位-->
+        <property name="name" value="大众"></property>
+        <property name="price" value="1111"></property>
+        <property name="wheel" value="4"></property>
+    </bean>
+
+    <bean id="car2" class="lesson03.Car">
+        <!--使用类型和位置定位-->
+        <property name="name" value="小众"></property>
+        <property name="price" value="2222"></property>
+        <property name="wheel" value="8"></property>
+    </bean>
+
+    <bean id="newPerson" class="lesson03.NewPerson">
+        <property name="name" value="何一品"></property>
+        <property name="age" value="22"></property>
+        <property name="cars">
+            <map>
+                <entry key="AA" value-ref="car1"></entry>
+                <entry key="BB" value-ref="car2"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--配置properties-->
+    <bean id="dataSource" class="lesson03.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">root</prop>
+                <prop key="host">127.0.0.1</prop>
+                <prop key="driver">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="lesson04.Address">
+        <property name="street" value="陕西安康"></property>
+    </bean>
+
+    <bean id="car" class="lesson04.Car" p:wheel="4" p:price="2000"></bean>
+
+    <bean id="person" class="lesson04.Person" p:name="张伟" p:address-ref="address" p:car-ref="car"></bean>
+</beans>

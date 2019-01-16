@@ -1,0 +1,4 @@
+注入方式 三种
+属性注入 <property name="name" value="spring"></property>
+构造方法注入
+工厂注入

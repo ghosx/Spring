@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="car" class="lesson02.Car">
+        <!--使用类型和位置定位-->
+        <constructor-arg value="宝马" type="java.lang.String" index="0"></constructor-arg>
+        <constructor-arg value="3000000" type="int" index="1"></constructor-arg>
+        <constructor-arg type="int" index="2">
+            <value>4</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="person" class="lesson02.Person">
+        <property name="name" value="张三"></property>
+        <property name="age" value="11"></property>
+        <!--下面两种写法相同，外部bean-->
+        <!--<property name="car" ref="car"></property>-->
+        <!--<property name="car">-->
+            <!--<ref bean="car"></ref>-->
+        <!--</property>-->
+        <!--内部bean,不需要写id 不能被引用-->
+        <property name="car">
+            <bean class="lesson02.Car">
+                <constructor-arg value="拖拉机"></constructor-arg>
+                <constructor-arg value="1000"></constructor-arg>
+                <constructor-arg value="3"></constructor-arg>
+            </bean>
+        </property>
+        <!--为级联属性复制 需要先初始化否则会出错，复制的属性还需要setter方法   这个一般不用-->
+        <property name="car.name" value="奥迪"></property>
+    </bean>
+
+    <bean id="person2" class="lesson02.Person">
+        <constructor-arg value="李四"></constructor-arg>
+        <constructor-arg value="22"></constructor-arg>
+        <constructor-arg ref="car"></constructor-arg>
+        <!--<constructor-arg><null></null></constructor-arg>-->
+    </bean>
+</beans>
