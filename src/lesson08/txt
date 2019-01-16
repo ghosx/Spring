@@ -1,0 +1,10 @@
+init destory 前置后置处理器(init)
+继承BeanPostProcessor 并实现postProcessBeforeInitialization 和postProcessAfterInitialization 接口
+
+流程:
+构造器
+赋值set方法
+beforeinit
+init
+afterinit
+destory
