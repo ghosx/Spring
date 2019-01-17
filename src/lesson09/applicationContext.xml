@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--使用注解-->
+    <context:component-scan base-package="lesson09">
+        <!--排除那些包-->
+        <!--<context:exclude-filter type="" expression=""></context:exclude-filter>-->
+        <!--包含那些包 需要配合use-default-filter 使用 -->
+        <!--<context:include-filter type="" expression=""></context:include-filter>-->
+    </context:component-scan>
+
+</beans>

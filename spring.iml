@@ -13,6 +13,7 @@
           <file>file://$MODULE_DIR$/src/lesson06/application.xml</file>
           <file>file://$MODULE_DIR$/src/lesson07/application.xml</file>
           <file>file://$MODULE_DIR$/src/lesson08/application.xml</file>
+          <file>file://$MODULE_DIR$/src/lesson09/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
